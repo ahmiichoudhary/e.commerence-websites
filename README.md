@@ -1,70 +1,47 @@
-# NovaCart — E-commerce Demo Store
+# URBANLOOM — E-commerce Front-End Demo
 
-NovaCart is a responsive, front-end e-commerce storefront built with plain HTML, CSS, and JavaScript. It is designed to be published on **GitHub Pages** without a build step.
+A second, visually distinct storefront concept made with HTML, CSS, and vanilla JavaScript. It uses a bold editorial streetwear aesthetic, a different font pairing, acid-lime and orange accents, oversized typography, and a monochrome campaign image.
+
+## Files
+
+- `index.html` — page structure and sections
+- `style.css` — visual design, typography, responsive layouts, drawer and modal
+- `script.js` — products, filtering, sorting, search, shopping bag, and demo checkout
+- `README.md` — setup and deployment guide
 
 ## Features
 
-- Responsive home page and product catalog
-- Product search, category filters, and price/name sorting
-- Add-to-cart, quantity updates, remove items, and subtotal calculation
-- Wishlist saved in browser local storage
-- Demo checkout dialog and demo newsletter form
-- Keyboard-friendly buttons, labels, and reduced-motion support
-- No framework, package manager, or build step required
-
-## Project files
-
-```text
-NovaCart/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
+- Responsive mobile and desktop layout
+- Product grid with PKR price display
+- Search, category filters, and price sorting
+- Shopping bag with quantity updates, removal, and saved browser state
+- Checkout preview (does not process a real payment)
+- Newsletter demo interaction
 
 ## Run locally
 
-1. Download and extract the ZIP.
-2. Open `index.html` in a browser.
-3. An internet connection is needed for Google Fonts and remote Unsplash product images.
+Download/extract the project and open `index.html` in your browser. For a smoother development workflow, open the folder in Visual Studio Code and use the Live Server extension.
 
-You can also use VS Code with the Live Server extension for a local preview.
+## Deploy on GitHub Pages
 
-## Publish with GitHub Pages
+1. Create a repository on GitHub, for example `urbanloom`.
+2. Upload all four files into the repository root.
+3. Open **Settings → Pages**.
+4. Under Build and deployment, select **Deploy from a branch**.
+5. Select branch `main` and folder `/ (root)`, then save.
+6. Wait for the deployment to complete. GitHub will show the live URL, typically `https://YOUR-USERNAME.github.io/urbanloom/`.
 
-1. Sign in to GitHub and create a **new public repository** named `novacart` (or any name you prefer).
-2. Extract the ZIP on your computer.
-3. Open the repository and select **Add file → Upload files**.
-4. Upload `index.html`, `style.css`, `script.js`, and `README.md` from the extracted folder. Make sure `index.html` is at the repository root, not inside an extra nested folder.
-5. Commit the files to the `main` branch.
-6. In your repository, open **Settings → Pages**.
-7. Under **Build and deployment**, select **Deploy from a branch**.
-8. Select branch `main` and folder `/(root)`, then click **Save**.
-9. Wait for GitHub Pages to publish the site. Your URL will usually look like:
-   `https://YOUR-USERNAME.github.io/novacart/`
+## Customize
 
-If you name the repository `YOUR-USERNAME.github.io`, the site URL will instead be:
-`https://YOUR-USERNAME.github.io/`
+- Edit the `products` array in `script.js` to change products, prices, categories, and image URLs.
+- The price formatter currently displays Pakistani Rupees (PKR); it does not convert currencies.
+- Change the CSS variables at the top of `style.css` to customize colors and fonts.
+- Images are remote Unsplash URLs and require internet access. Replace them with images you have rights to use.
 
-## Customize the store
+## Important
 
-- **Store name:** Find `NovaCart` / `nova` in `index.html` and update the visible branding.
-- **Products:** Edit the `PRODUCTS` array at the top of `script.js`. Each item has an `id`, `name`, `category`, `price`, `tag`, `rating`, `reviews`, `image`, and `description`.
-- **Categories:** Keep product categories consistent with the options in `index.html`.
-- **Colors and styling:** Edit CSS variables near the top of `style.css`.
-- **Currency:** The demo currently displays prices in USD. Change the `money()` function in `script.js` to use a different currency if needed.
+This is a static front-end demo. Checkout does not create orders or take payments, and the newsletter form does not subscribe users to a real mailing list. For production, connect a secure backend or e-commerce service. Never expose private API keys in browser JavaScript.
 
-## Important limitations
+## Third-party assets
 
-This is a **front-end demo**, not a complete production commerce backend.
-
-- Cart and wishlist data are saved in the visitor's browser only.
-- The checkout is a demonstration and does not process payment, send orders, or securely store customer information.
-- The newsletter form does not send emails.
-- Product photos are loaded from external Unsplash URLs and need an internet connection.
-
-For real orders, payment processing, customer accounts, inventory, and order management, connect a secure backend or commerce provider. Never place secret API keys in front-end files or a public GitHub repository.
-
-## License
-
-You may adapt this starter project for your own learning or storefront. Check the terms of any third-party images or services you use before launching commercially.
+Google Fonts and remote image URLs are loaded from their respective providers. Review their terms before using this project commercially.
